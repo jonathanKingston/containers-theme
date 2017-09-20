@@ -1,0 +1,20 @@
+{
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "cookies",
+    "storage",
+    "theme",
+    "contextualIdentities",
+    "<all_urls>",
+    "tabs"
+  ],
+  "icons": {
+    "96": "img/containers.svg"
+  },
+  "description": "Change theme colour based on your container color",
+  "manifest_version": 2,
+  "name": "Containers theme",
+  "version": "1.0"
+}
