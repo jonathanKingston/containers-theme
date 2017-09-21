@@ -55,7 +55,7 @@ class containersTheme {
     this.cachedCookieStore = currentCookieStore;
     return browser.theme.update(windowId, {
       images: {
-        headerURL: "none",
+        headerURL: "",
       },
       colors: {
         accentcolor: container.colorCode,

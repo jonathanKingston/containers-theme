@@ -16,5 +16,5 @@
   "description": "Change theme colour based on your container color",
   "manifest_version": 2,
   "name": "Containers theme",
-  "version": "1.0"
+  "version": "1.0.1"
 }
