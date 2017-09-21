@@ -51,14 +51,24 @@ class containersTheme {
     browser.theme.reset();
   }
 
+  hexToRgb(hex) {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+ }
+
   async changeTheme(currentCookieStore, windowId, container) {
     this.cachedCookieStore = currentCookieStore;
+    const rgb = this.hexToRgb(container.colorCode);
     return browser.theme.update(windowId, {
       images: {
         headerURL: "none",
       },
       colors: {
-        accentcolor: container.colorCode,
+        accentcolor: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.7)`,
         textcolor: "#111",
       }
     });
