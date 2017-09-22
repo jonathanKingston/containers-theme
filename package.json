@@ -1,0 +1,19 @@
+{
+  "name": "containers-theme",
+  "version": "1.0.2",
+  "description": "Changes the current browser window theme to match the colour of the active tab.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "web-ext build -i assets/* --overwrite-dest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathanKingston/containers-theme.git"
+  },
+  "author": "Jonathan Kingston",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/jonathanKingston/containers-theme/issues"
+  },
+  "homepage": "https://github.com/jonathanKingston/containers-theme#readme"
+}

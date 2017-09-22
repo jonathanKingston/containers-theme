@@ -10,11 +10,16 @@
     "<all_urls>",
     "tabs"
   ],
+  "applications": {
+    "gecko": {
+      "strict_min_version": "57.0a"
+    }
+  },
   "icons": {
     "96": "img/containers.svg"
   },
   "description": "Change theme colour based on your container color",
   "manifest_version": 2,
   "name": "Containers theme",
-  "version": "1.0.1"
+  "version": "1.0.2"
 }
