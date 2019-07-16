@@ -55,11 +55,11 @@ class containersTheme {
     this.cachedCookieStore = currentCookieStore;
     return browser.theme.update(windowId, {
       images: {
-        headerURL: "",
+        theme_frame: "",
       },
       colors: {
-        accentcolor: container.colorCode,
-        textcolor: "#111",
+        frame: container.colorCode,
+        tab_background_text: "#111",
       }
     });
   }

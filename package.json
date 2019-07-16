@@ -1,6 +1,6 @@
 {
   "name": "containers-theme",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Changes the current browser window theme to match the colour of the active tab.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
