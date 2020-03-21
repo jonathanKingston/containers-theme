@@ -19,19 +19,18 @@ class containersTheme {
     const activeTabs = await browser.tabs.query({
       active: true
     });
-    const hasUnpainted = activeTabs.some((tab) => {
-      return this.isUnpaintedTheme(tab.cookieStoreId);
-    });
+
     const containers = await this.getContainers();
-    if (hasUnpainted) {
-      this.resetTheme();
-    }
+
     activeTabs.forEach((tab) => {
       const cookieStoreId = tab.cookieStoreId;
       if (!this.isUnpaintedTheme(cookieStoreId)) {
         this.changeTheme(cookieStoreId,
           tab.windowId,
           containers.get(cookieStoreId));
+      }
+      else {
+        this.resetTheme(tab.windowId);
       }
     });
   }
@@ -47,14 +46,11 @@ class containersTheme {
 
   isUnpaintedTheme(currentCookieStore) {
     return (currentCookieStore == "firefox-default" ||
-            currentCookieStore == "firefox-private");
+      currentCookieStore == "firefox-private");
   }
 
-  resetTheme() {
-    // Because of the following, we loop through all active windows after a reset
-    // this means when we have unpained tabs the browser flickers
-    // https://bugzilla.mozilla.org/show_bug.cgi?id=1401691
-    browser.theme.reset();
+  resetTheme(windowId) {
+    browser.theme.reset(windowId);
   }
 
   async changeTheme(currentCookieStore, windowId, container) {
